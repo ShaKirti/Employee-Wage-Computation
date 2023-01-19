@@ -27,10 +27,11 @@ let empHours = 0;
 let monthlySalary = 0;
 let empWage = 0;
 let workingDayPerMonth = 20;
+let workingHourPerMonth = 0;
+let days = 1;
 
 // 2) using switch case to calculate daily employee wage
-var i;
-for (i = 1; i <= workingDayPerMonth; i++){
+while(days != 20 && workingHourPerMonth != 100){
     switch(Math.floor(Math.random() * 10) % 3){
         case 0:
             console.log("Employee is Absent.");
@@ -48,6 +49,8 @@ for (i = 1; i <= workingDayPerMonth; i++){
             break;   
     }
     monthlySalary += empWage;
+    console.log("Day "+ days + " : "+ empWage);
+    days++;
 }
 
 
