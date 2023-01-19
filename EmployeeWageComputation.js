@@ -1,6 +1,5 @@
 console.log("Welcome to Employee Wage Computation Program");
 
-//UC-1 Attendence of employee
 /**
  * 1) initializing a const variable
  * 2) using Math.floor() to return the greatest integer or equal to the given number & Math.random() to
@@ -16,7 +15,7 @@ const isAbsent = 0;
  * 2) using Math.floor() to return the greatest integer or equal to the given number & Math.random() to
    return the number in the range of [0,1]
  */
-let empAttendence = Math.floor(Math.random() * 10) % 2;
+let empAttendence = Math.floor(Math.random() * 10) % 3;
 
 /** 
  * 3) using if-else conditional statement, if empAttendance == isAbsent then the employee is absent else
@@ -25,11 +24,11 @@ let empAttendence = Math.floor(Math.random() * 10) % 2;
 if (empAttendence == isAbsent) {
     console.log("Employee is Absent.");
     return;
-} else {
+} else if(empAttendence == 1) {
     console.log("Employee is Present.");
+}else {
+    console.log("Employee is present half day.");
 }
-
-// UC-2 Calculate Daily employee wage
 /**
  * 1) declaring const variable
  * 2) using switch case to calculate daily employee wage
@@ -38,6 +37,7 @@ if (empAttendence == isAbsent) {
 // 1) declaring const variable
 const WAGE_PER_HOUR = 20;
 const FULL_DAY_WORKING_HOUR = 8;
+const PART_TIME_WORKING_HOUR = 4;
 let empHours = 0;
 
 // 2) using switch case to calculate daily employee wage
@@ -46,7 +46,10 @@ switch(empAttendence){
         empHours = 0;
     case 1:
         empHours = FULL_DAY_WORKING_HOUR;
-        break;  
+        break;
+    case 2:
+        empHours = PART_TIME_WORKING_HOUR;
+        break;   
 }
 
 let empWage = empHours * WAGE_PER_HOUR;
