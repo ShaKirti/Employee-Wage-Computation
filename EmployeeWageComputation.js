@@ -38,7 +38,6 @@ if (empAttendence == isAbsent) {
 // 1) declaring const variable
 const WAGE_PER_HOUR = 20;
 const FULL_DAY_WORKING_HOUR = 8;
-const PART_TIME_WORKING_HOUR = 4;
 let empHours = 0;
 
 // 2) using switch case to calculate daily employee wage
@@ -47,10 +46,7 @@ switch(empAttendence){
         empHours = 0;
     case 1:
         empHours = FULL_DAY_WORKING_HOUR;
-        break;
-    case 2:
-        empHours = PART_TIME_WORKING_HOUR;
-        break;   
+        break;  
 }
 
 let empWage = empHours * WAGE_PER_HOUR;
