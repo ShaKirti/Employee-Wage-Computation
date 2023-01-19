@@ -38,18 +38,20 @@ if (empAttendence == isAbsent) {
 // 1) declaring const variable
 const WAGE_PER_HOUR = 20;
 const FULL_DAY_WORKING_HOUR = 8;
+const PART_TIME_WORKING_HOUR = 4;
 let empHours = 0;
 
-let empCheck = Math.floor(Math.random() * 10) % 2;
-
 // 2) using switch case to calculate daily employee wage
-switch(empCheck){
+switch(empAttendence){
     case 0:
         empHours = 0;
     case 1:
         empHours = FULL_DAY_WORKING_HOUR;
         break;
+    case 2:
+        empHours = PART_TIME_WORKING_HOUR;
+        break;   
 }
 
 let empWage = empHours * WAGE_PER_HOUR;
-console.log("Daily Employee wage is: "+ empWage);
+console.log("Employee wage is: "+ empWage);
